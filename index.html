@@ -1,0 +1,70 @@
+<!doctype html>
+<title>ヤニはダメ絶対。</title>
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="/" class="navbar-brand d-flex align-items-center">
+                    <strong>あなたの寿命はどのくらいかな？？？</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="content container">
+      <form action="/result" method="post">
+        <h2> 性別を選択して下さい。</h2>
+        <P>
+          <input type="radio" name="sex" value="male" required>男性
+          <input type="radio" name="sex" value="female" required>女性
+        </P>
+        <h2>誕生日を入力して下さい。</h2>
+        <p>
+          <input type="number" name="year" value=2002 min=1910 max=2022 required>
+          <input type="number" name="month" value=4 min=1 max=12 required>
+          <input type="number" name="day" value=1 min=0 max=31 required>
+        </p>
+        <h2> タバコを吸っていた事がありますか？ </h2>
+        <P>
+          <input type="radio" name="yani" value="yes" required>はい
+          <input type="radio" name="yani" value="no" required>いいえ
+        </P>
+        <h2> いつからタバコを吸っていますか？ </h2>
+        <h5> ※吸ったことがない方は無視してください。</h5>
+        <p>
+          <input type="number" name="yst_year" min=1910 max=2022>
+          <input type="number" name="yst_month" min=1 max=12>
+          <input type="number" name="yst_day" min=0 max=31> ～
+
+          <input type="number" name="yend_year" min=1910 max=2022>
+          <input type="number" name="yend_month" min=1 max=12>
+          <input type="number" name="yend_day" min=0 max=31>
+        </p>
+        <h2> 一日何本タバコを吸いますか？ </h2>
+        <p> <input type="number" name="quantity" value=0 min=0 required> </p>
+        <h2> 表示形式を選んでください。 </h2>
+        <p>
+          <input type="radio" name="animal" value="dog" required>柴犬
+          <input type="radio" name="animal" value="crocodile" required>100ワニ
+        </p>
+        <p> <input type="submit" value="送信"> </p>
+
+      </form>
+    </div>
+</body>
+</html>
